@@ -25,7 +25,7 @@ app.post('/api/login', (req, res) => {
     email: 'barry@barry.com',
   };
   // async approach
-  jwt.sign({ user }, 'secret key', (err, token) => {
+  jwt.sign({ user }, 'secret key', { expiresIn: '1h' }, (err, token) => {
     res.json({
       token,
     });
